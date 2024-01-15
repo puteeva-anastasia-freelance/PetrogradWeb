@@ -424,11 +424,9 @@
 						this.resumeImageAnimation();
 						this.scrollToNextSection();
 						this.sectionPinEl.style.opacity = '0';
-						console.log('выходим');
 					},
 					onEnterBack: enterCallback,
 					onLeaveBack: () => {
-						console.log('выходим');
 						this.headerEl.classList.remove("is-fixed");
 					},
 				},

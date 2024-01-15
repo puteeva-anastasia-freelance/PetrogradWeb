@@ -135,8 +135,7 @@ function buildcopy() {
 			'app/fonts/**/*',
 			'app/*.php',
 			'app/video/**/*',
-			'app/js/**/.js', 
-			'!app/js/**/app.js',
+			'app/js/app.min.js', 
 			'app/libs/locomotive-scroll/dist/locomotive-scroll.min.css'
 		], {
 			base: 'app/'
