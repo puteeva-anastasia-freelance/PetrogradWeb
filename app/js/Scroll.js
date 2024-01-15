@@ -52,11 +52,13 @@
 		 * Метод инициализирует работу со скроллом
 		 */
 		init() {
-			window.addEventListener('resize', () => {
-				document.querySelector('.media').style.height = `${window.innerHeight}px`;
-			});
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-			document.querySelector('.media').style.height = `${window.innerHeight}px`;
+			window.addEventListener('resize', () => {
+				let vh = window.innerHeight * 0.01;
+				document.documentElement.style.setProperty('--vh', `${vh}px`);
+			});
 
 			this.initializeScroller();
 			this.initializeScrollTriggers();
@@ -162,7 +164,8 @@
 		rotateVideo() {
 			if (!this.isScrollingUp) {
 				let offsetBottom = (window.innerHeight - this.mediaWrapVideoEl.offsetHeight) / 2;
-				let x = null, y = null;
+				let x = null,
+					y = null;
 
 				this.bottomDistanceVideo = window.innerHeight - this.mediaWrapVideoEl.getBoundingClientRect().bottom;
 
@@ -186,7 +189,8 @@
 		 */
 		rotateImage() {
 			let offsetBottom = (window.innerHeight - this.mediaWrapImgEl.offsetHeight) / 2;
-			let x = null, y = null;
+			let x = null,
+				y = null;
 
 			this.bottomDistanceImage = window.innerHeight - this.mediaWrapImgEl.getBoundingClientRect().bottom;
 
