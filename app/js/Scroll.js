@@ -52,14 +52,6 @@
 		 * Метод инициализирует работу со скроллом
 		 */
 		init() {
-			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-			window.addEventListener('resize', () => {
-				let vh = window.innerHeight * 0.01;
-				document.documentElement.style.setProperty('--vh', `${vh}px`);
-			});
-
 			this.initializeScroller();
 			this.initializeScrollTriggers();
 			this.setScrollUpdate();
