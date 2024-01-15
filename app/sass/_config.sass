@@ -1,0 +1,63 @@
+$font-default: 'TT Commons Trial', sans-serif
+$font-soviet-font: 'Soviet Font', sans-serif
+
+$black: #192632
+$red: #FC0000
+$white: #F1F1F1
+$beige: #F1E7D4
+$sand: #BDB199
+$graphite: #5A636B
+$dark-red: #B90303
+
+$maxWidth: 1366
+
+@mixin adaptiv-font($pcSize, $mobSize)
+	$addSize: $pcSize - $mobSize
+	$addMobSize: $addSize + $addSize * 0.7
+
+	@media (max-width: 767px)
+		font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 375px) / #{$maxWidth}))
+
+	@media (min-width: 767px)
+		font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidth}))
+
+@import fonts
+
+@import '../libs/locomotive-scroll/dist/locomotive-scroll.min.css'
+
+html
+	-ms-overflow-style: none
+	scrollbar-width: none
+
+html, body
+	width: 100vw
+	height: 100vh
+
+body
+	margin: 0
+	font-family: $font-default
+	color: $black
+	background-color: $beige
+	overflow-x: hidden
+
+	&::-webkit-scrollbar
+		width: 0
+
+button
+	outline: none
+	border: 0
+	font-family: $font-default
+	cursor: pointer
+
+input
+	font-family: $font-default
+
+*
+	-webkit-tap-highlight-color: transparent
+
+.hidden
+	width: 1px
+	height: 1px
+	position: absolute
+	left: -99999px
+	margin: -1px

@@ -1,0 +1,23 @@
+section.request#request
+	.container.request__container
+		h2.h2 Оставить заявку
+		form.request__form.form-application
+			input(type="hidden" name="name-form" value="Оставить заявку")
+			.request__field
+				input.request__input.request__input-name(type="text" required placeholder="Ваше имя" name="name" autocomplete="off")
+				span.request__error
+			.request__field
+				input.request__input.mask-phone(type="text" required placeholder="+7 ___-___-__-__", name="phone")
+				span.request__error
+			.request__inner
+				.wrap-button.request__wrap-button
+					button.button.request__button(type="submit") Отправить
+				.request__policy
+					input.request__policy-checkbox#request-privacy-policy(type="checkbox" name="privacy-policy")
+					label.request__policy-label(for="request-privacy-policy") Нажимая на кнопку «Отправить» вы соглашаетесь с нашей политикой конфиденциальности
+					span.request__error.request__policy-error Для отправки данных подтвердите согласие на обработку персональных данных, нажав на кнопку выше
+			.request__success
+				svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+					circle(cx='12' cy='12' r='11.5' stroke='#27AE60')
+					path(d='M8 12L11 15L16 9' stroke='#27AE60')
+				p.request__success-txt Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время

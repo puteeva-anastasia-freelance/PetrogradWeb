@@ -1,0 +1,97 @@
+.header
+	padding: 15px 0
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 9999
+
+	@media (min-width: 576px)
+		padding: 20px 0
+
+	&.is-fixed
+		.header__logo
+			&-icon
+				fill: $white
+
+			&-red
+				fill: $white
+
+		.header__menu-link
+			color: $white
+
+			&:hover
+				color: $red
+				background-color: $white
+		
+		.header__burger
+			background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='30' height='9' viewBox='0 0 30 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='3' fill='%23f1f1f1'/%3E%3Crect x='20' y='6' width='10' height='3' fill='%23f1f1f1'/%3E%3C/svg%3E%0A")
+
+			&:hover
+				background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='30' height='9' viewBox='0 0 30 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='3' fill='%23192632'/%3E%3Crect x='20' y='6' width='10' height='3' fill='%23192632'/%3E%3C/svg%3E%0A")
+
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	&__logo
+		width: 125px
+		height: 30px
+
+		@media (min-width: 576px)
+			width: 191px
+			height: 46px
+
+		&-icon
+			fill: $black
+			width: 100%
+			height: 100%
+
+		&-red
+			fill: $red
+
+	&__menu
+		margin-right: -19px
+		margin-top: -3.5px
+		display: none
+
+		@media (min-width: 768px)
+			display: block
+
+		&-list
+			list-style-type: none
+			display: flex
+
+		&-item
+			padding-right: 5px
+			padding-left: 5px
+
+		&-link
+			text-decoration: none
+			color: inherit
+			padding: 34px 15px 31px 15px
+			font-size: 20px
+
+			&.transition-effect
+				transition: background-color .2s ease-in-out, color .2s ease-in-out
+
+			&:hover
+				background-color: $red
+				color: #fff
+	
+	&__burger
+		background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='30' height='9' viewBox='0 0 30 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='3' fill='%23192632'/%3E%3Crect x='20' y='6' width='10' height='3' fill='%23192632'/%3E%3C/svg%3E%0A")
+		width: 30px
+		height: 9px
+		transition: background .2s ease-in-out
+
+		&:hover
+			background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='30' height='9' viewBox='0 0 30 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='30' height='3' fill='%23FC0000'/%3E%3Crect x='20' y='6' width='10' height='3' fill='%23FC0000'/%3E%3C/svg%3E%0A")
+
+		@media (min-width: 576px)
+			width: 60px
+			height: 18px
+
+		@media (min-width: 768px)
+			display: none

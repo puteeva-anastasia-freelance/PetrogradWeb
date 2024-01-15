@@ -1,0 +1,208 @@
+.media
+	background-color: $red
+	height: 100vh
+	position: relative
+
+	&__section
+		height: 100vh
+		overflow: hidden
+		display: flex
+		left: 0
+		transition: opacity 1s ease-in-out
+
+	&__pin-wrap
+		height: 100vh
+		display: flex
+		justify-content: flex-start
+		align-items: center
+
+		& > *
+			min-width: 100vw
+
+	&__lines
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		flex-wrap: wrap
+		height: 100%
+		padding: 0
+
+		@media (min-width: 768px)
+			justify-content: center
+
+	&__line
+		width: 100%
+		font-weight: 700
+		font-style: italic
+		font-size: 120px
+		letter-spacing: 0.03em
+		color: $white
+		text-transform: uppercase
+		white-space: nowrap
+		margin: 0
+		position: relative
+		margin-bottom: -11px
+
+		@media (min-width: 768px)
+			margin: 0
+
+		&:first-of-type
+			margin-top: 56px
+
+			@media (min-width: 768px)
+				margin-bottom: 13px
+
+		span:nth-child(2n - 1)
+			-webkit-text-stroke: 2px $white
+			-webkit-text-fill-color: transparent
+			text-stroke: 2px $white
+			text-fill-color: transparent
+
+		&-1
+			left: -600px
+
+		&-2
+			right: 1050px
+
+	&__wrap
+		position: fixed
+		z-index: 999999
+		height: 54%
+		width: 100vw
+		display: flex
+		justify-content: center
+		bottom: 0
+		top: 0
+		margin: auto 0
+
+		@media (min-width: 768px)
+			height: 73%
+
+		&.is-paused
+			transform: none!important
+
+		&-video
+			bottom: -9999999px
+
+		&-img
+			left: 0
+			bottom: -9999999px
+
+	&__video
+		clip-path: inset(1px 1px)
+
+	&__video, &__img
+		height: 100%
+		width: calc(100% - 45px)
+		object-fit: contain
+		object-position: center
+
+		&.is-paused
+			transform: none!important
+
+		&.rotate-15
+			transform: rotate(-15deg)!important
+
+		&.rotate0
+			transform: rotate(0)!important
+
+		@media (min-width: 768px)
+			width: auto
+
+	&__watch
+		position: absolute
+		display: flex
+		align-items: center
+		justify-content: center
+		left: 0
+		right: 0
+		margin: 0 auto
+		bottom: -50px
+		width: 100px
+		height: 100px
+
+		@media (min-width: 768px)
+			width: 136px
+			height: 136px
+			left: auto
+			right: auto
+			margin: 0
+			bottom: auto
+
+		&.is-hidden
+			display: none
+
+		&-button
+			width: 74px
+			height: 74px
+			background-color: $white
+			border-radius: 50%
+			border: 0.5px solid $black
+			cursor: pointer
+			position: relative
+			z-index: 10
+			display: flex
+			align-items: center
+			justify-content: center
+			padding-left: 15px
+			transition: border-color .2s ease-in-out
+
+			@media (min-width: 768px)
+				width: 100px
+				height: 100px
+
+			&:hover
+				border-color: $red
+
+				.media__watch-icon
+					fill: $red
+
+				.media__watch-arrow-icon
+					stroke: $red
+
+				& + .media__watch-svg
+					fill: $red
+
+			&:active
+				border-color: $dark-red
+
+				.media__watch-icon
+					fill: $dark-red
+
+				.media__watch-arrow-icon
+					stroke: $dark-red
+
+				& + .media__watch-svg
+					fill: $dark-red
+
+		&-arrow
+			padding-left: 5px
+
+			&-icon
+				stroke: $black
+				transition: stroke .2s ease-in-out
+				width: 21px
+				height: 20px
+
+				@media (min-width: 768px)
+					width: 27px
+					height: 26px
+
+		&-icon
+			fill: $black
+			transition: fill .2s ease-in-out
+			width: 22px
+			height: 24px
+
+			@media (min-width: 768px)
+				width: 29px
+				height: 32px
+
+		&-svg
+			position: absolute
+			top: 0
+			left: 0
+			fill: $black
+			transition: fill .2s ease-in-out
+			width: 100%
+			height: 100%

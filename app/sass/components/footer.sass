@@ -1,0 +1,60 @@
+.footer
+	height: 71px
+	background-color: $black
+	color: $white
+	display: flex
+	align-items: center
+
+	@media (min-width: 576px)
+		height: 83px
+
+	&__container
+		@media (min-width: 576px)
+			display: flex
+			justify-content: space-between
+	
+	&__txt
+		margin: 0
+		@include adaptiv-font(20, 14)
+		width: 100%
+		text-align: center
+		margin-bottom: 10px
+		
+		@media (min-width: 576px)
+			width: auto
+			text-align: left
+			margin-bottom: 0
+	
+	&__copyright
+		margin-right: 6px
+	
+	&__made
+		color: $graphite
+		margin-bottom: 0
+	
+	&__link
+		color: $white
+		text-decoration: none
+		position: relative
+		transition: color .2s ease-in-out
+
+		&:hover
+			color: $red
+
+			&::after
+				background-color: $red
+
+		&::after
+			content: ''
+			display: block
+			width: 100%
+			position: absolute
+			height: 1px
+			background-color: $white
+			left: 1px
+			bottom: -1px
+			transition: background-color .2s ease-in-out
+
+			@media (min-width: 576px)
+				bottom: -3px
+	

@@ -1,0 +1,64 @@
+{
+	"name": "PetrogradWeb",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"author": "Anastasia",
+	"type": "module",
+	"browserslist": [
+		"last 10 versions"
+	],
+	"license": "ISC",
+	"scripts": {
+		"start": "gulp",
+		"deploy": "gh-pages -d dist"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.17.8",
+		"@babel/preset-env": "^7.16.11",
+		"autoprefixer": "^10.4.4",
+		"babel-loader": "^8.2.4",
+		"babel-plugin-module-resolver": "^4.1.0",
+		"babel-plugin-root-import": "^6.6.0",
+		"bootstrap": "^5.1.3",
+		"browser-sync": "^2.27.9",
+		"browsersync-ssi": "^0.2.4",
+		"cssnano": "^5.1.5",
+		"del": "^6.0.0",
+		"gh-pages": "^6.0.0",
+		"gulp": "^4.0.2",
+		"gulp-changed": "^4.0.3",
+		"gulp-concat": "^2.6.1",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-imagemin": "^8.0.0",
+		"gulp-jade": "^1.1.0",
+		"gulp-less": "^5.0.0",
+		"gulp-less-glob": "^1.0.0",
+		"gulp-noop": "^1.0.1",
+		"gulp-postcss": "^9.0.1",
+		"gulp-rsync": "0.0.9",
+		"gulp-sass": "^5.1.0",
+		"gulp-sass-glob": "^1.1.0",
+		"gulp-stylus": "^2.7.1",
+		"gulp-uglify": "^3.0.2",
+		"gulp-webp": "^5.0.0",
+		"postcss": "^8.4.12",
+		"sass": "^1.49.9",
+		"terser-webpack-plugin": "^5.3.1",
+		"webpack": "^5.70.0",
+		"webpack-stream": "^7.0.0"
+	},
+	"dependencies": {
+		"gsap": "^3.12.4",
+		"jquery": "^3.6.0",
+		"locomotive-scroll": "^4.1.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/puteeva-anastasia-freelance/PetrogradWeb.git"
+	},
+	"bugs": {
+		"url": "https://github.com/puteeva-anastasia-freelance/PetrogradWeb/issues"
+	},
+	"homepage": "https://puteeva-anastasia-freelance.github.io/PetrogradWeb/"
+}

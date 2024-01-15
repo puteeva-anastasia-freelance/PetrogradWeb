@@ -1,0 +1,156 @@
+.request
+	min-height: calc(100vh - 71px)
+	padding-top: 21.7vh
+	box-sizing: border-box
+
+	@media (min-width: 768px)
+		padding-top: 26.8vh
+		height: calc(100vh - 83px)
+
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: center
+
+	&__form
+		width: 100%
+		max-width: 613px
+		margin-top: 40px
+
+		@media (min-width: 768px)
+			margin-top: 6.4vh
+
+	&__field
+		margin-bottom: 10px
+
+	&__input
+		width: 100%
+		background-color: $white
+		min-height: 60px
+		border: 1px solid $sand
+		font-size: 20px
+		line-height: 23px
+		padding-left: 18px
+		padding-top: 5px
+		box-sizing: border-box
+		cursor: pointer
+		color: $black
+
+		@media (min-width: 576px)
+			padding-left: 20px
+
+		&::placeholder
+			color: $sand
+
+		&:hover
+			border-color: $black
+
+		&:focus
+			border-color: $black
+			outline: none
+
+		&.is-error
+			border-color: $red
+
+			&::placeholder
+				color: $red
+
+		&.is-filled
+			border-color: $black
+
+	&__error
+		margin-top: 11px
+		margin-left: 21px
+		color: $red
+		font-size: 14px
+		display: none
+
+	&__inner
+		display: flex
+		align-items: center
+		margin-top: 30px
+		flex-wrap: wrap
+
+		@media (min-width: 576px)
+			flex-wrap: nowrap
+			margin-top: 40.5px
+
+		&.is-start
+			align-items: flex-start
+
+	&__wrap-button
+		width: 100%
+		height: 60px
+		display: inline-block
+
+		@media (min-width: 576px)
+			width: 198px
+			margin-right: 15.5px
+			height: 57px
+
+	&__button
+		padding-top: 6px
+		padding-right: 4px
+
+	&__policy
+		position: relative
+		margin-top: 12px
+		width: 100%
+		box-sizing: border-box
+		margin-bottom: 30px
+
+		@media (min-width: 576px)
+			width: calc(100% - 15px - 198px)
+			margin-top: 3px
+			margin-bottom: 0
+		
+		&-checkbox
+			display: none
+
+			&:checked
+				& + .request__policy-label::before
+					border-color: $red
+					background: center no-repeat url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='4' height='4' fill='%23FC0000'/%3E%3C/svg%3E%0A")
+
+		&-label
+			font-size: 14px
+			line-height: 115%
+			display: block
+			letter-spacing: -0.002em
+			cursor: pointer
+			padding-left: 15px
+
+			&:hover
+				&::before
+					border-color: $red
+
+			&::before
+				content: ''
+				display: block
+				width: 10px
+				height: 10px
+				position: absolute
+				left: 0
+				background-color: transparent
+				border: 1px solid $black
+				box-sizing: border-box
+				transition: border-color .2s ease-in-out
+				top: 1px
+
+				@media (min-width: 768px)
+					top: 0
+
+		&-error
+			margin-left: 0
+
+	&__success
+		margin-top: 25px
+		display: none
+
+		svg
+			flex-shrink: 0
+
+		&-txt
+			margin: 0
+			margin-left: 15px
+			font-size: 20px

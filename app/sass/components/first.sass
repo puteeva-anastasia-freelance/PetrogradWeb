@@ -1,0 +1,59 @@
+.first
+	padding-top: 100px
+	min-height: 100vh
+	box-sizing: border-box
+	background: bottom 14px right 10px / 365px no-repeat url("../img/dist/bike-small.webp"), bottom / 100% 188px no-repeat url("data:image/svg+xml,%3Csvg width='375' height='188' viewBox='0 0 375 188' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M375 37.0005L375 188L-8.21774e-06 188L0 -1.63918e-05L375 37.0005Z' fill='%23FC0000'/%3E%3C/svg%3E%0A")
+	
+	@media (min-width: 768px)
+		padding-top: 23vh
+		background: bottom 0 right -150px / auto 80% no-repeat url("../img/dist/bike.webp"), bottom 0 right -200px / contain no-repeat url("data:image/svg+xml,%3Csvg width='453' height='800' viewBox='0 0 453 800' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M89 0H453V800H0L89 0Z' fill='%23FC0000'/%3E%3C/svg%3E%0A")
+
+	@media (min-width: 992px)
+		background: bottom 0 right -20% / auto 80% no-repeat url("../img/dist/bike.webp"), bottom 0 right -20% / contain no-repeat url("data:image/svg+xml,%3Csvg width='453' height='800' viewBox='0 0 453 800' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M89 0H453V800H0L89 0Z' fill='%23FC0000'/%3E%3C/svg%3E%0A")
+
+	@media (min-width: 1300px)
+		background: bottom 0 right 14px / auto 91.5% no-repeat url("../img/dist/bike.webp"), right / contain no-repeat url("data:image/svg+xml,%3Csvg width='453' height='800' viewBox='0 0 453 800' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M89 0H453V800H0L89 0Z' fill='%23FC0000'/%3E%3C/svg%3E%0A")
+
+	&__sign
+		@include adaptiv-font(30, 20)
+		color: red
+		font-style: italic
+		display: block
+		text-align: center
+
+		@media (min-width: 768px)
+			text-align: left
+	
+	&__title
+		text-align: center
+		margin-top: 9px
+
+		@media (min-width: 768px)
+			margin-left: -10px
+			margin-top: -1px
+			text-align: left
+	
+	&__wrap-button
+		transform: skew(-16deg)
+		width: 187px
+		height: 44px
+		border-radius: 2px 3px
+		margin-right: auto
+		margin-left: auto
+		margin-top: 30px
+
+		@media (min-width: 768px)
+			transform: skew(-15deg)
+			margin-top: 50px
+			margin-left: 7px
+			height: 49.5px
+			width: 190px
+
+	&__button		
+		&-txt
+			display: inline-block
+			transform: skew(15deg)
+			position: relative
+			z-index: 10
+			margin-top: 6px
+			margin-left: 3px

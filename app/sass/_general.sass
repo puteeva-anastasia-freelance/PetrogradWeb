@@ -1,0 +1,86 @@
+.h1, .h2
+	font-family: $font-soviet-font
+	line-height: 150%
+	margin: 0
+
+.h1
+	@include adaptiv-font(100, 40)
+	letter-spacing: 0.02em
+
+.h2
+	@include adaptiv-font(58, 40)
+	letter-spacing: 0.02em
+	text-align: center
+
+	@media(min-width: 768px)
+		text-align: left
+		letter-spacing: 0.05em
+
+.button
+	text-decoration: none
+	background-color: $red
+	color: $white
+	font-size: 20px
+	letter-spacing: 0.04em
+	text-transform: uppercase
+	width: 100%
+	height: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	border-radius: inherit
+
+.container
+	position: relative
+	margin: 0 auto
+	padding: 0 10px
+	width: 100%
+	box-sizing: border-box
+
+	@media (min-width: 576px)
+		padding: 0 35px
+
+	@media (min-width: 1024px)
+		padding: 0 60px
+
+	@media (min-width: 1440px)
+		max-width: 1800px
+
+.wrap-button
+	position: relative
+
+	&::before
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		background-color: $dark-red
+		z-index: -1
+		position: absolute
+		border-radius: inherit
+		bottom: 0
+		left: 0
+		transition: bottom .2s ease-in-out, left .2s ease-in-out
+
+	&:hover
+		&::before
+			bottom: -5px
+			left: 5px
+		
+	&:active
+		&::before
+			display: none
+
+		.button
+			background-color: $dark-red
+
+.overlay
+	background-color: $black
+	opacity: 0.8
+	z-index: 9999
+	display: none
+	bottom: 0
+	left: 0
+	right: 0
+	top: 0
+	position: fixed

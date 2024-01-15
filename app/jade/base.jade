@@ -1,0 +1,42 @@
+doctype html
+html(lang='ru')
+
+	head
+		meta(charset='utf-8')
+
+		title Путеева Анастасия - тестовое задание
+		meta(name='description' content='Тестовое задание для компании PetrogradWeb')
+
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5')
+		
+		link(rel='shortcut icon' href='img/favicon/favicon.ico' type='image/x-icon')
+		link(rel='apple-touch-icon' href='img/favicon/apple-touch-icon.png')
+
+		link(rel='stylesheet' href='css/app.min.css')
+
+		link(rel='preload' fetchpriority='high' as='image' href='img/dist/bike-small.webp' type='image/webp' media='(max-width: 768px)')
+		link(rel='preload' fetchpriority='high' as='image' href='img/dist/bike.webp' type='image/webp' media='(min-width: 768px)')
+	
+	body
+
+		div#direction-container(data-scroll-container='')
+			include components/header
+			include components/mobile-menu
+
+			main
+				include components/first
+
+				include components/media
+
+				include components/request
+
+			include components/footer
+
+			.overlay
+		script(src='js/app.min.js')
+
+		script(src='js/Scroll.js')
+		script(src='js/CTAButton.js')
+		script(src='js/Request.js')
+		script(src='js/MobileMenu.js')
