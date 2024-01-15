@@ -52,6 +52,12 @@
 		 * Метод инициализирует работу со скроллом
 		 */
 		init() {
+			window.addEventListener('resize', () => {
+				document.querySelector('.media').style.height = `${window.innerHeight}px`;
+			});
+
+			document.querySelector('.media').style.height = `${window.innerHeight}px`;
+
 			this.initializeScroller();
 			this.initializeScrollTriggers();
 			this.setScrollUpdate();
