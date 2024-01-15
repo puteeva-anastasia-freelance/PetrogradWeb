@@ -102,7 +102,7 @@
 						left: 0,
 						top: 0,
 						width: window.innerWidth,
-						height: window.innerHeight
+						height: document.documentElement.clientHeight
 					};
 				},
 				pinType: this.pageContainerEl.style.transform ? "transform" : "fixed"
@@ -155,10 +155,10 @@
 		 */
 		rotateVideo() {
 			if (!this.isScrollingUp) {
-				let offsetBottom = (window.innerHeight - this.mediaWrapVideoEl.offsetHeight) / 2;
+				let offsetBottom = (document.documentElement.clientHeight - this.mediaWrapVideoEl.offsetHeight) / 2;
 				let x = null, y = null;
 
-				this.bottomDistanceVideo = window.innerHeight - this.mediaWrapVideoEl.getBoundingClientRect().bottom;
+				this.bottomDistanceVideo = document.documentElement.clientHeight - this.mediaWrapVideoEl.getBoundingClientRect().bottom;
 
 				if (this.isMobileVersion) {
 					x = -7 / (offsetBottom + 400);
@@ -179,10 +179,10 @@
 		 * Метод поворачивает элемент с картинкой
 		 */
 		rotateImage() {
-			let offsetBottom = (window.innerHeight - this.mediaWrapImgEl.offsetHeight) / 2;
+			let offsetBottom = (document.documentElement.clientHeight - this.mediaWrapImgEl.offsetHeight) / 2;
 			let x = null, y = null;
 
-			this.bottomDistanceImage = window.innerHeight - this.mediaWrapImgEl.getBoundingClientRect().bottom;
+			this.bottomDistanceImage = document.documentElement.clientHeight - this.mediaWrapImgEl.getBoundingClientRect().bottom;
 
 			if (this.isMobileVersion) {
 				x = -7 / (offsetBottom + 400);
@@ -273,7 +273,6 @@
 		 */
 		setBottomPositionOfImage() {
 			if (!this.isBottomPositionSetImage) {
-				console.log(`-${this.videoLineSecondEl.offsetWidth - this.pauseVideo}px`);
 				if (this.isMobileVersion) {
 					this.mediaWrapImgEl.style.bottom = `-${this.videoLineSecondEl.offsetWidth - this.pauseVideo + 1000}px`;
 				} else {
@@ -343,15 +342,15 @@
 
 			this.scroller.scrollTo(this.firstEl.nextElementSibling, {
 				duration: 1000,
-				offset: 5,
+				offset: 10,
 				callback: () => {
 					this.mediaWrapImgEl.style.bottom = '';
+					this.headerEl.classList.add('is-fixed');
 				}
 			});
 
 			setTimeout(() => {
 				this.isScrollingUp = false;
-				this.headerEl.classList.add('is-fixed');
 			}, 1800);
 
 			this.mediaVideoEl.style.transform = 'rotate(0)';
@@ -419,9 +418,11 @@
 						this.resumeImageAnimation();
 						this.scrollToNextSection();
 						this.sectionPinEl.style.opacity = '0';
+						console.log('выходим');
 					},
 					onEnterBack: enterCallback,
 					onLeaveBack: () => {
+						console.log('выходим');
 						this.headerEl.classList.remove("is-fixed");
 					},
 				},
