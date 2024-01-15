@@ -22,6 +22,6 @@ header.header
 					each object, key in data.header.menu
 						li.header__menu-item
 							a.header__menu-link.transition-effect(
-								href=object.url data-scroll-to=''
+								href=object.url data-scroll-to='' data-scroll-offset='5'
 							)!= object.name
 		button.header__burger(type="button" aria-label="Открыть меню")
