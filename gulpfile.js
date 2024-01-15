@@ -71,6 +71,16 @@ function scripts() {
 		.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
 }
 
+function scriptsJS() {
+	return src([
+			'app/js/**/*',
+			'!app/js/app.js',
+			'!app/js/app.min.js',
+		])
+		.pipe(uglify())
+		.pipe(dest('dist/js/'))
+}
+
 function styles() {
 	return src([`app/${preprocessor}/*.*`, `!app/${preprocessor}/_*.*`])
 		.pipe(eval(`${preprocessor}glob`)())
@@ -125,7 +135,7 @@ function buildcopy() {
 			'app/fonts/**/*',
 			'app/*.php',
 			'app/video/**/*',
-			'app/js/**/*.js', 
+			'app/js/**/.js', 
 			'!app/js/**/app.js',
 			'app/libs/locomotive-scroll/dist/locomotive-scroll.min.css'
 		], {
@@ -197,7 +207,7 @@ export {
 	jade
 }
 
-export let assets = series(scripts, styles, jade, convertToWebp, cleanImages, cleanhtml)
-export let build = series(scripts, cleandist, cleanhtml, convertToWebp, cleanImages, styles, buildcopy, buildhtml, minifyhtml)
+export let assets = series(scripts, styles, jade, convertToWebp, cleanImages, cleanhtml, scriptsJS, )
+export let build = series(scripts, cleandist, cleanhtml, convertToWebp, cleanImages, styles, buildcopy, buildhtml, minifyhtml, scriptsJS)
 
-export default series(scripts, styles, jade, convertToWebp, cleanImages, cleanhtml, parallel(browsersync, startwatch))
+export default series(scripts, styles, jade, convertToWebp, cleanImages, cleanhtml, scriptsJS, parallel(browsersync, startwatch))
