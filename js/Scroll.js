@@ -102,7 +102,7 @@
 						left: 0,
 						top: 0,
 						width: window.innerWidth,
-						height: document.documentElement.clientHeight
+						height: window.innerHeight
 					};
 				},
 				pinType: this.pageContainerEl.style.transform ? "transform" : "fixed"
@@ -155,10 +155,10 @@
 		 */
 		rotateVideo() {
 			if (!this.isScrollingUp) {
-				let offsetBottom = (document.documentElement.clientHeight - this.mediaWrapVideoEl.offsetHeight) / 2;
+				let offsetBottom = (window.innerHeight - this.mediaWrapVideoEl.offsetHeight) / 2;
 				let x = null, y = null;
 
-				this.bottomDistanceVideo = document.documentElement.clientHeight - this.mediaWrapVideoEl.getBoundingClientRect().bottom;
+				this.bottomDistanceVideo = window.innerHeight - this.mediaWrapVideoEl.getBoundingClientRect().bottom;
 
 				if (this.isMobileVersion) {
 					x = -7 / (offsetBottom + 400);
@@ -179,10 +179,10 @@
 		 * Метод поворачивает элемент с картинкой
 		 */
 		rotateImage() {
-			let offsetBottom = (document.documentElement.clientHeight - this.mediaWrapImgEl.offsetHeight) / 2;
+			let offsetBottom = (window.innerHeight - this.mediaWrapImgEl.offsetHeight) / 2;
 			let x = null, y = null;
 
-			this.bottomDistanceImage = document.documentElement.clientHeight - this.mediaWrapImgEl.getBoundingClientRect().bottom;
+			this.bottomDistanceImage = window.innerHeight - this.mediaWrapImgEl.getBoundingClientRect().bottom;
 
 			if (this.isMobileVersion) {
 				x = -7 / (offsetBottom + 400);
